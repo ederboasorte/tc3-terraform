@@ -2,4 +2,4 @@ aws_region   = "us-east-1"
 project_name = "platform"
 environment  = "dev"
 
-db_password = "fiap123"
+db_password = "postgres"

@@ -6,18 +6,18 @@ locals {
     Environment = var.environment
   }
 
-  # rds_instances = {
-  #   postgres01 = {
-  #     identifier = "${local.name_prefix}-postgres01"
-  #     db_name    = "appdb01"
-  #   }
-  #   postgres02 = {
-  #     identifier = "${local.name_prefix}-postgres02"
-  #     db_name    = "appdb02"
-  #   }
-  #   postgres03 = {
-  #     identifier = "${local.name_prefix}-postgres03"
-  #     db_name    = "appdb03"
-  #   }
-  # }
+  rds_instances = {
+    flags_db = {
+      identifier = "${local.name_prefix}-flags-db"
+      db_name    = "flags_db"
+    }
+    auth_db = {
+      identifier = "${local.name_prefix}-auth-db"
+      db_name    = "auth_db"
+    }
+    targeting_db = {
+      identifier = "${local.name_prefix}-targeting-db"
+      db_name    = "targeting_db"
+    }
+  }
 }

@@ -41,69 +41,70 @@ variable "database_subnet_cidrs" {
   default = ["10.20.21.0/24", "10.20.22.0/24", "10.20.23.0/24"]
 }
 
-# variable "eks_cluster_name" {
-#   type        = string
-#   default     = "platform-eks"
-# }
+variable "eks_cluster_name" {
+  type    = string
+  default = "platform-eks"
+}
 
-# variable "eks_version" {
-#   type        = string
-#   default     = "1.35"
-# }
+variable "eks_version" {
+  type    = string
+  default = "1.35"
+}
 
-# variable "node_instance_types" {
-#   type        = list(string)
-#   default     = ["t3.medium"]
-# }
+variable "node_instance_types" {
+  type    = list(string)
+  default = ["t3.medium"]
+}
 
-# variable "node_desired_size" {
-#   type        = number
-#   default     = 2
-# }
+variable "node_desired_size" {
+  type    = number
+  default = 1
+}
 
-# variable "node_min_size" {
-#   type        = number
-#   default     = 2
-# }
+variable "node_min_size" {
+  type    = number
+  default = 1
+}
 
-# variable "node_max_size" {
-#   type        = number
-#   default     = 4
-# }
+variable "node_max_size" {
+  type    = number
+  default = 3
+}
 
-# variable "db_username" {
-#   type        = string
-#   default     = "postgresadmin"
-# }
+variable "db_username" {
+  type    = string
+  default = "postgres"
+}
 
-# variable "db_password" {
-#   type        = string
-#   sensitive   = true
-#   description = "Senha do PostgreSQL"
-# }
+variable "db_password" {
+  type      = string
+  default   = "postgres"
+  sensitive = true
+  #description = "Senha do PostgreSQL"
+}
 
-# variable "db_instance_class" {
-#   type        = string
-#   default     = "db.t3.micro"
-# }
+variable "db_instance_class" {
+  type    = string
+  default = "db.t3.micro"
+}
 
-# variable "redis_node_type" {
-#   type        = string
-#   default     = "cache.t3.micro"
-# }
+variable "redis_node_type" {
+  type    = string
+  default = "cache.t3.micro"
+}
 
-# variable "sqs_queue_name" {
-#   type        = string
-#   default     = "platform-events-queue"
-# }
+variable "sqs_queue_name" {
+  type    = string
+  default = "evaluation-queue"
+}
 
-# variable "ecr_repositories" {
-#   type = list(string)
-#   default = [
-#     "app-auth",
-#     "app-orders",
-#     "app-payments",
-#     "app-notifications",
-#     "app-analytics"
-#   ]
-# }
+variable "ecr_repositories" {
+  type = list(string)
+  default = [
+    "auth-service",
+    "flag-service",
+    "targeting-service",
+    "evaluation-service",
+    "analytics-service"
+  ]
+}
