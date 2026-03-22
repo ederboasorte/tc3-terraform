@@ -10,6 +10,7 @@ module "networking" {
   tags                  = local.common_tags
 }
 
+# Modulo EKS
 module "eks" {
   source = "./modules/eks"
 
@@ -25,6 +26,7 @@ module "eks" {
   tags               = local.common_tags
 }
 
+# Modulos de dados RDS, Redis e DynamoDB
 module "data" {
   source = "./modules/data"
 
@@ -41,6 +43,7 @@ module "data" {
   tags                = local.common_tags
 }
 
+# Modulo SQS
 module "messaging" {
   source = "./modules/messaging"
 
@@ -48,6 +51,7 @@ module "messaging" {
   tags       = local.common_tags
 }
 
+# Modulo ECR
 module "ecr" {
   source = "./modules/ecr"
 
@@ -55,4 +59,8 @@ module "ecr" {
   tags         = local.common_tags
 }
 
+# Modulo ArgoCD
+module "argocd" {
+  source = "./modules/argocd"
+}
 

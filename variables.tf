@@ -80,7 +80,6 @@ variable "db_password" {
   type      = string
   default   = "postgres"
   sensitive = true
-  #description = "Senha do PostgreSQL"
 }
 
 variable "db_instance_class" {

@@ -12,7 +12,6 @@ output "eks_cluster_endpoint" {
 
 output "rds_endpoints" {
   value     = module.data.rds_endpoints
-  sensitive = true
 }
 
 output "redis_primary_endpoint" {

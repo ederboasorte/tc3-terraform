@@ -1,4 +1,5 @@
 terraform {
+
   backend "s3" {
     bucket  = "ederbrandao-s3-eks-state-files"
     key     = "eks/cluster/dev/terraform.tfstate"
@@ -16,5 +17,15 @@ provider "aws" {
       Environment = var.environment
       ManagedBy   = "Terraform"
     }
+  }
+}
+
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"
   }
 }
